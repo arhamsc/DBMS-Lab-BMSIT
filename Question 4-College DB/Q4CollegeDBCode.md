@@ -32,7 +32,7 @@
 > >
 > > - If FinalIA< 12 then CAT = ‘Weak’
 > >
-> >     Give these details only for 8th semester A, B, and C section >>students.
+> >     Give these details only for 8th semester A, B, and C section students.
 
 ## CODE
 
@@ -166,7 +166,7 @@
 >
 > Insert into class table
 >
-> _Connecting usn and semsec_
+> (Connecting usn and semsec)
 >
 > > ```sql
 > > INSERT ALL
@@ -199,7 +199,7 @@
 >
 > Inserting into course table
 >
-> _Considered 2 subjects per semester_
+> (Considered 2 subjects per semester)
 >
 > > ```sql
 > > INSERT ALL
@@ -216,7 +216,7 @@
 >
 > Insert into iamarks table
 >
-> _Every student has marks for two subjects in their semester_
+> (Every student has marks for two subjects in their semester)
 >
 > > ```sql
 > > INSERT ALL
@@ -346,7 +346,9 @@
 > >    ORDER BY sec, iamarks.subcode;
 > > ```
 
-**Tested on Oracle DB V19**
+### Tested on Oracle DB V19
+
+---
 
 **_Note_**:
 **_Check for version in ORACLE_**
