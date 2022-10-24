@@ -65,9 +65,9 @@ Book_Author Table
 >   author_name VARCHAR(20)
 > );
 > ```
->
-> Library Programme Table
->
+
+Library Programme Table
+
 > ```sql
 > CREATE TABLE library_programme(
 >   programme_id INT PRIMARY KEY,
@@ -75,9 +75,9 @@ Book_Author Table
 >   address VARCHAR(20)
 > );
 > ```
->
-> Book Copies table
->
+
+Book Copies table
+
 > ```sql
 > CREATE TABLE book_copies(
 >   book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
@@ -85,17 +85,17 @@ Book_Author Table
 >   no_of_copies INT
 > );
 > ```
->
-> Card Table (Extra table not mentioned in question)
->
+
+Card Table (Extra table not mentioned in question)
+
 > ```sql
 > CREATE TABLE card(
 >   card_no INT PRIMARY KEY
 > );
 > ```
->
-> Book Lending Table
->
+
+Book Lending Table
+
 > ```sql
 > CREATE TABLE book_lending(
 >   book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
@@ -121,9 +121,9 @@ Inserting into Publisher table
 >        INTO publisher VALUES('Planeta','Bangalore',5151515151)
 > SELECT * FROM dual;
 > ```
->
-> Inserting into Book table
->
+
+Inserting into Book table
+
 > ```sql
 > INSERT ALL
 >    INTO book VALUES(1,'DBMS','Mcgraw-Hill',2017)
@@ -133,9 +133,9 @@ Inserting into Publisher table
 >    INTO book VALUES(5,'OS','Pearson',2016)
 > SELECT * FROM dual;
 > ```
->
-> Insert into Book Author table
->
+
+Insert into Book Author table
+
 > ```sql
 > INSERT ALL
 >    INTO book_author VALUES(1,'Navathe')
@@ -145,9 +145,9 @@ Inserting into Publisher table
 >    INTO book_author VALUES(5,'Galvin')
 > SELECT * FROM dual;
 > ```
->
-> Inserting into Library Programme table
->
+
+Inserting into Library Programme table
+
 > ```sql
 > INSERT ALL
 >    INTO library_programme VALUES(1, 'Double Dhamaka', 'Bangalore')
@@ -156,9 +156,9 @@ Inserting into Publisher table
 >    INTO library_programme VALUES(4, 'Best of fantasy', 'Hyderabad')
 > SELECT * FROM dual;
 > ```
->
-> Insert into Book Copies table
->
+
+Insert into Book Copies table
+
 > ```sql
 > INSERT ALL
 >    INTO book_copies VALUES(1,1,10)
@@ -170,9 +170,9 @@ Inserting into Publisher table
 >    INTO book_copies VALUES(3,4,11)
 > SELECT * FROM dual;
 > ```
->
-> Insert into Card Table
->
+
+Insert into Card Table
+
 > ```sql
 > INSERT ALL
 >    INTO card VALUES(100)
@@ -182,9 +182,9 @@ Inserting into Publisher table
 >    INTO card VALUES(104)
 > SELECT * FROM dual;
 > ```
->
-> Insert into Book Lending Table
->
+
+Insert into Book Lending Table
+
 > ```sql
 > INSERT ALL
 >    INTO book_lending VALUES(1,1,101, '01-JAN-17','01-JUN-17')
@@ -209,9 +209,9 @@ Q1:
 >            AND
 >        BC.programme_id = LP.programme_id;
 > ```
->
-> Q2:
->
+
+Q2:
+
 > ```sql
 > SELECT card_no, COUNT(card_no)
 >    FROM book_lending
@@ -219,8 +219,8 @@ Q1:
 >    HAVING COUNT(card_no) >= 3
 >    GROUP BY card_no;
 > ```
->
-> Q3:
+
+Q3:
 
 In the Scheme we have linked the book_id with "ON DELETE CASCADE" as foreign key to other tables which makes sure that when the book is deleted from the "BOOK" table, it deletes the whole row linked to this book from the other tables also.
 
@@ -229,8 +229,8 @@ In the Scheme we have linked the book_id with "ON DELETE CASCADE" as foreign key
 >   FROM book
 >   WHERE book_id = 1;
 > ```
->
-> Q4:
+
+Q4:
 
 "PARTITION BY" creates a sub view to use, as the Aggregate functions can't be used with extra fields, by creating PARTITION we can use other fields(columns) also. It is always used with "OVER()"
 
@@ -239,8 +239,8 @@ In the Scheme we have linked the book_id with "ON DELETE CASCADE" as foreign key
 >    FROM book
 >    ORDER BY pub_year;
 > ```
->
-> Q5:
+
+Q5:
 
 As mentioned in above question, we partition(create sub table) w.r.t title, hence we were able to use book_id, title and other columns, and distinct is used to not repeat the book values.
 
