@@ -2,31 +2,31 @@
 
 ## Question
 
-> ### Schema
+### Schema
+
+> BOOK(<ins>Book_id</ins>, Title, Publisher_Name, Pub_Year)
 >
-> > BOOK(<ins>Book_id</ins>, Title, Publisher_Name, Pub_Year)
-> >
-> > BOOK_AUTHORS(<ins>Book_id</ins>, Author_Name)
-> >
-> > PUBLISHER(<ins>Name</ins>, Address, Phone)
-> >
-> > BOOK_COPIES(<ins>Book_id</ins>, <ins>Programme_id</ins>, No-of_Copies)
-> >
-> > BOOK_LENDING(<ins>Book_id</ins>, <ins>Programme_id</ins>, <ins>Card_No</ins> , Date_Out, Due_Date)
-> >
-> > LIBRARY_PROGRAMME(<ins>Programme_id</ins>, Programme_Name, Address)
+> BOOK_AUTHORS(<ins>Book_id</ins>, Author_Name)
 >
-> ### Queries to Execute
+> PUBLISHER(<ins>Name</ins>, Address, Phone)
 >
-> > 1. Retrieve details of all books in the library – id, title, name of publisher, authors, number of copies in each Programme, etc.
-> >
-> > 2. Get the particulars of borrowers who have borrowed more than 3 books, but from Jan 2017 to Jun 2017.
-> >
-> > 3. Delete a book in BOOK table. Update the contents of other tables to reflect this data manipulation operation.
-> >
-> > 4. Partition the BOOK table based on year of publication. Demonstrate its working with a simple query.
-> >
-> > 5. Create a view of all books and its number of copies that are currently available in the Library.
+> BOOK_COPIES(<ins>Book_id</ins>, <ins>Programme_id</ins>, No-of_Copies)
+>
+> BOOK_LENDING(<ins>Book_id</ins>, <ins>Programme_id</ins>, <ins>Card_No</ins> , Date_Out, Due_Date)
+>
+> LIBRARY_PROGRAMME(<ins>Programme_id</ins>, Programme_Name, Address)
+
+### Queries to Execute
+
+> 1. Retrieve details of all books in the library – id, title, name of publisher, authors, number of copies in each Programme, etc.
+>
+> 2. Get the particulars of borrowers who have borrowed more than 3 books, but from Jan 2017 to Jun 2017.
+>
+> 3. Delete a book in BOOK table. Update the contents of other tables to reflect this data manipulation operation.
+>
+> 4. Partition the BOOK table based on year of publication. Demonstrate its working with a simple query.
+>
+> 5. Create a view of all books and its number of copies that are currently available in the Library.
 
 ## CODE
 
