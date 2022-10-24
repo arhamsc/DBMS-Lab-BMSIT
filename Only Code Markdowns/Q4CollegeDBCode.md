@@ -32,7 +32,7 @@
 > >
 > > - If FinalIA< 12 then CAT = ‘Weak’
 > >
-> >     Give these details only for 8th semester A, B, and C section >>students.
+> >     Give these details only for 8th semester A, B, and C section students.
 
 ## CODE
 
@@ -133,17 +133,6 @@
 > > ```
 >
 > Inserting into semsec table (semester and section)
->
-> > ```sql
-> > INSERT ALL
-> >    INTO employee VALUES(103, 'Layla Scott', 'US', 'F', 600000, 100, NULL) --dept 5
-> >    INTO employee VALUES(104, 'Clay Neal', 'UK', 'M', 650000, 100, NULL) --dept 2
-> >    INTO employee VALUES(105, 'Aldo Hansen', 'LA', 'M', 700000, 101, NULL) --dept 3
-> >    INTO employee VALUES(106, 'Drew Richardson','US', 'M', 750000, 101, NULL) --dept 4
-> > SELECT * FROM dual;
-> > ```
->
-> Inserting departments with manager IDs into department table
 >
 > **Considered _Even_ Semesters**
 >
