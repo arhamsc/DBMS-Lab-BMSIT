@@ -37,14 +37,14 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 ### Create Tables
 
 Publisher table
->
->  ```sql
->  CREATE TABLE publisher(
->     name VARCHAR(20) PRIMARY KEY,
->     address VARCHAR(20),
->     phone NUMBER(10)
->  );
->  ```
+
+  ```sql
+  CREATE TABLE publisher(
+     name VARCHAR(20) PRIMARY KEY,
+     address VARCHAR(20),
+     phone NUMBER(10)
+  );
+  ```
 
 Book Table
 >
