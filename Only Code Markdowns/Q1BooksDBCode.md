@@ -58,53 +58,53 @@ Book Table
   ```
 
 Book_Author Table
-
-  ```sql
-  CREATE TABLE book_author(
-     book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
-     author_name VARCHAR(20)
-  );
-  ```
-
- Library Programme Table
-
-  ```sql
-  CREATE TABLE library_programme(
-     programme_id INT PRIMARY KEY,
-     programme_name VARCHAR(20) NOT NULL,
-     address VARCHAR(20)
-  );
-  ```
-
- Book Copies table
-
-  ```sql
-  CREATE TABLE book_copies(
-     book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
-     programme_id INT REFERENCES library_programme(programme_id) ON DELETE SET NULL,
-     no_of_copies INT
-  );
-  ```
-
- Card Table (Extra table not mentioned in question)
-
-  ```sql
-  CREATE TABLE card(
-     card_no INT PRIMARY KEY
-  );
-  ```
-
- Book Lending Table
-
-  ```sql
-  CREATE TABLE book_lending(
-     book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
-     programme_id INT REFERENCES library_programme(programme_id) ON DELETE SET NULL,
-     card_no INT REFERENCES card(card_no) ON DELETE CASCADE,
-     date_out DATE,
-     due_date DATE
-  );
-  ```
+>
+>```sql
+>CREATE TABLE book_author(
+>   book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
+>   author_name VARCHAR(20)
+>);
+>```
+>
+Library Programme Table
+>
+>```sql
+>CREATE TABLE library_programme(
+>   programme_id INT PRIMARY KEY,
+>   programme_name VARCHAR(20) NOT NULL,
+>   address VARCHAR(20)
+>);
+>```
+>
+Book Copies table
+>
+>```sql
+>CREATE TABLE book_copies(
+>   book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
+>   programme_id INT REFERENCES library_programme(programme_id) ON DELETE SET NULL,
+>   no_of_copies INT
+>);
+>```
+>
+Card Table (Extra table not mentioned in question)
+>
+>```sql
+>CREATE TABLE card(
+>   card_no INT PRIMARY KEY
+>);
+>```
+>
+Book Lending Table
+>
+>```sql
+>CREATE TABLE book_lending(
+>   book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
+>   programme_id INT REFERENCES library_programme(programme_id) ON DELETE SET NULL,
+>   card_no INT REFERENCES card(card_no) ON DELETE CASCADE,
+>   date_out DATE,
+>   due_date DATE
+>);
+>```
 
 ### Inserting Data into the tables
 
