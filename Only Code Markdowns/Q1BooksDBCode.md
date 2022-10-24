@@ -110,7 +110,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 
 **_I have taken sufficient values to run all required queries_**
 
-> Inserting into Publisher table
+Inserting into Publisher table
 >
 > > ```sql
 > > INSERT ALL
@@ -122,7 +122,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > > SELECT * FROM dual;
 > > ```
 >
-> Inserting into Book table
+Inserting into Book table
 >
 > > ```sql
 > > INSERT ALL
@@ -134,7 +134,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > > SELECT * FROM dual;
 > > ```
 >
-> Insert into Book Author table
+Insert into Book Author table
 >
 > > ```sql
 > > INSERT ALL
@@ -146,7 +146,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > > SELECT * FROM dual;
 > > ```
 >
-> Inserting into Library Programme table
+Inserting into Library Programme table
 >
 > > ```sql
 > > INSERT ALL
@@ -157,7 +157,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > > SELECT * FROM dual;
 > > ```
 >
-> Insert into Book Copies table
+Insert into Book Copies table
 >
 > > ```sql
 > > INSERT ALL
@@ -171,7 +171,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > > SELECT * FROM dual;
 > > ```
 >
-> Insert into Card Table
+Insert into Card Table
 >
 > > ```sql
 > > INSERT ALL
@@ -183,7 +183,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > > SELECT * FROM dual;
 > > ```
 >
-> Insert into Book Lending Table
+Insert into Book Lending Table
 >
 > > ```sql
 > > INSERT ALL
@@ -197,7 +197,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 
 ### Queries(Answers)
 
-> Q1:
+Q1:
 >
 > > ```sql
 > > SELECT B.book_id, B.title, B.publisher_name, BA.author_name, LP.programme_name, BC.no_of_copies
@@ -210,7 +210,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > >        BC.programme_id = LP.programme_id;
 > > ```
 >
-> Q2:
+Q2:
 >
 > > ```sql
 > > SELECT card_no, COUNT(card_no)
@@ -220,7 +220,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > >    GROUP BY card_no;
 > > ```
 >
-> Q3:
+Q3:
 >
 > In the Scheme we have linked the book_id with "ON DELETE CASCADE" as foreign key to other tables which makes sure that when the book is deleted from the "BOOK" table, it deletes the whole row linked to this book from the other tables also.
 >
@@ -230,7 +230,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > >   WHERE book_id = 1;
 > > ```
 >
-> Q4:
+Q4:
 >
 > "PARTITION BY" creates a sub view to use, as the Aggregate functions can't be used with extra fields, by creating PARTITION we can use other fields(columns) also. It is always used with "OVER()"
 >
@@ -240,7 +240,7 @@ There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key
 > >    ORDER BY pub_year;
 > > ```
 >
-> Q5:
+Q5:
 >
 > As mentioned in above question, we partition(create sub table) w.r.t title, hence we were able to use book_id, title and other columns, and distinct is used to not repeat the book values.
 >
