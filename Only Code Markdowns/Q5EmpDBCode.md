@@ -284,7 +284,7 @@ Q4:
 Q5:
 
 > ```sql
-> SELECT *
+> SELECT dno, COUNT(dno)
 >    FROM employee
 >    WHERE
 >        dno IN(
@@ -295,7 +295,8 @@ Q5:
 >                FETCH NEXT 1 ROW ONLY --return only first row(max number)
 >            )
 >        AND
->        salary > 600000;
+>        salary > 600000
+>     GROUP BY dno;
 > ```
 
 **_Note_**:

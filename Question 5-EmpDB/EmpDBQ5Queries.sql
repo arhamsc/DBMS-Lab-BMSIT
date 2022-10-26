@@ -73,7 +73,7 @@ SELECT *
 number and the number of its employees who are making more than Rs. 6,00,000
 */ 
 
-SELECT *
+SELECT dno, COUNT(dno)
     FROM employee
     WHERE 
         dno IN(
@@ -84,4 +84,5 @@ SELECT *
                 FETCH NEXT 1 ROW ONLY --return only first row(max number)
             )
         AND
-        salary > 600000;
+        salary > 600000
+    GROUP BY dno;
