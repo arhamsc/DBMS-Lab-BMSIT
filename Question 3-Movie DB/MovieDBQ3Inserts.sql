@@ -1,6 +1,6 @@
 INSERT ALL
     INTO actor VALUES(1, 'Anthony Perkins', 'M') --psyco
-    INTO actor VALUES(2, 'Anthony Perkins', 'F') --pysco
+    INTO actor VALUES(2, 'Janet Leigh', 'F') --pysco
     INTO actor VALUES(3, 'Cary Grant', 'M') --north by northwest
     INTO actor VALUES(4, 'Eva Marie Saint', 'F') --north by northwest
     INTO actor VALUES(5, 'Liam Neeson', 'M') --schindler's list

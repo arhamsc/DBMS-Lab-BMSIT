@@ -164,8 +164,8 @@ Q3:
 Q4:
 
 > ```sql
-> SCREATE VIEW highest_cust AS
->    SELECT ord_date, cust_name, purchase_amt
+> CREATE VIEW highest_cust AS
+>    SELECT ord_date, cust_name, purchase_amt, orders.salesman_id
 >        FROM orders
 >            JOIN customer
 >            ON customer.customer_id = orders.customer_id

@@ -238,6 +238,12 @@ Q4:
 > SELECT book_id, title, publisher_name, pub_year, COUNT(pub_year) OVER(PARTITION BY pub_year) YearCount
 >    FROM book
 >    ORDER BY pub_year;
+> ----New Updated----(Requires oracle 11+)
+> ALTER TABLE book MODIFY PARTITION BY RANGE (pub_year) INTERVAL(1) (
+>    PARTITION year_2015 VALUES LESS THAN (2016)
+> );
+>
+> SELECT * FROM book PARTITION FOR (2016);
 > ```
 
 Q5:

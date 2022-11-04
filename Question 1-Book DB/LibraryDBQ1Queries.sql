@@ -36,6 +36,17 @@ SELECT book_id, title, publisher_name, pub_year, COUNT(pub_year) OVER(PARTITION 
     FROM book
     ORDER BY pub_year;
 
+CREATE TABLE unpart_book AS Select * From book;
+SELECT * FROM unpart_book PARTITION (year_2015);
+
+
+ALTER TABLE unpart_book MODIFY PARTITION BY RANGE (pub_year) INTERVAL(1) (
+    PARTITION year_2015 VALUES LESS THAN (2016)
+);
+
+SELECT * FROM unpart_book PARTITION FOR (2016);
+
+
 /*
 5. Create a view of all books and its number of copies that are currently available in the Library.
 */

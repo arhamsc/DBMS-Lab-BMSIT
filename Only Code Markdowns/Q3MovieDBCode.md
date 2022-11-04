@@ -93,7 +93,7 @@ Inserting into Actors table
 > ```sql
 > INSERT ALL
 >    INTO actor VALUES(1, 'Anthony Perkins', 'M')
->    INTO actor VALUES(2, 'Anthony Perkins', 'F')
+>    INTO actor VALUES(2, 'Janet Leigh', 'F')
 >    INTO actor VALUES(3, 'Cary Grant', 'M')
 >    INTO actor VALUES(4, 'Eva Marie Saint', 'F')
 >    INTO actor VALUES(5, 'Liam Neeson', 'M')
