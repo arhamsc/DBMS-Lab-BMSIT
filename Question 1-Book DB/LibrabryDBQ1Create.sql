@@ -41,3 +41,11 @@ CREATE TABLE book_lending(
     date_out DATE,
     due_date DATE
 );
+
+DELETE book_lending;
+DELETE card;
+DELETE book_copies;
+DELETE library_programme;
+DELETE book_author;
+DELETE book;
+DELETE publisher;

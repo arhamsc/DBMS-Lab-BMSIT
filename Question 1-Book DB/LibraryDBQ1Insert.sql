@@ -54,6 +54,7 @@ INSERT ALL
     INTO book_lending VALUES(4,1,101, '15-MAR-17','15-JUL-17')
     INTO book_lending VALUES(1,1,104, '12-APR-17','12-MAY-17')
 SELECT * FROM dual;
+INSERT INTO book_lending VALUES(4,1,102, '12-APR-17','12-MAY-17');
 
 SELECT * FROM publisher;
 SELECT * FROM book;

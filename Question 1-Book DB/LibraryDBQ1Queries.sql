@@ -57,4 +57,15 @@ CREATE VIEW total_books AS
         WHERE B.book_id = BC.book_id
         ORDER BY B.book_id;
 DROP VIEW total_books;
-        
+
+CREATE VIEW total_books AS
+    SELECT book_id, SUM(total_books) as total_copies, SUM(lend_books) as borrowed_books, (SUM(total_books)-SUM(lend_books)) as remaining
+        FROM (
+            SELECT book_id, no_of_copies as total_books, 0 as lend_books from book_copies 
+                UNION ALL
+            SELECT DISTINCT book_id, null as total_books, COUNT(card_no) as lend_books from book_lending group by(book_id)
+        )
+        GROUP BY book_id
+        ORDER BY book_id;
+SELECT * FROM total_books;
+DROP VIEW total_books;

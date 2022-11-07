@@ -234,31 +234,51 @@ Q4:
 
 "PARTITION BY" creates a sub view to use, as the Aggregate functions can't be used with extra fields, by creating PARTITION we can use other fields(columns) also. It is always used with "OVER()"
 
-> ```sql
-> SELECT book_id, title, publisher_name, pub_year, COUNT(pub_year) OVER(PARTITION BY pub_year) YearCount
->    FROM book
->    ORDER BY pub_year;
-> ----New Updated----(Requires oracle 11+)
-> ALTER TABLE book MODIFY PARTITION BY RANGE (pub_year) INTERVAL(1) (
->    PARTITION year_2015 VALUES LESS THAN (2016)
-> );
+> --New Updated(Requires oracle 11+)--
 >
-> SELECT * FROM book PARTITION FOR (2016);
-> ```
+> > ```sql
+> > ALTER TABLE book MODIFY PARTITION BY RANGE (pub_year) INTERVAL(1) (
+> >    PARTITION year_2015 VALUES LESS THAN (2016)
+> > );
+> >
+> > SELECT * FROM book PARTITION FOR (2016);
+> > ```
+>
+> --For Lab(Oracle 10g XE)--
+>
+> > ```sql
+> > CREATE TABLE year_2016 AS
+> >    SELECT * FROM book WHERE pub_year = 2016;
+> > SELECT * FROM year_2016;
+> > ```
+>
+> --For creating sub table, for getting the count of books per year--
+>
+> > ```sql
+> > SELECT book_id, title, publisher_name, pub_year, COUNT(pub_year) OVER(PARTITION BY pub_year) YearCount
+> >    FROM book
+> >    ORDER BY pub_year;
+> > ```
 
 Q5:
 
 As mentioned in above question, we partition(create sub table) w.r.t title, hence we were able to use book_id, title and other columns, and distinct is used to not repeat the book values.
 
 > ```sql
-> CREATE VIEW total_books AS
->    SELECT DISTINCT B.book_id, B.title, B.publisher_name, B.pub_year, SUM(BC.no_of_copies) OVER(PARTITION BY B.title) TotalBooks
->        FROM book B, book_copies BC
->        WHERE B.book_id = BC.book_id
->        ORDER BY B.book_id;
->
-> DROP VIEW total_books;
+> CREATE VIEW remaining_books AS
+>    SELECT book_id, SUM(total_books) as total_copies, SUM(lend_books) as borrowed_books, (SUM(total_books)-SUM(lend_books)) as remaining
+>        FROM (
+>            SELECT book_id, no_of_copies as total_books, 0 as lend_books from book_copies
+>                UNION ALL
+>            SELECT DISTINCT book_id, null as total_books, COUNT(card_no) as lend_books from book_lending group by(book_id)
+>        )
+>        GROUP BY book_id
+>        ORDER BY book_id;
+> SELECT * FROM remaining_books;
+> DROP VIEW remaining_books;
 > ```
+>
+> _Note: When we change the actual table tuples(rows) the VIEW also changes i.e it reflects the latest data from the tables._
 
 ### Tested on Oracle DB V19
 
