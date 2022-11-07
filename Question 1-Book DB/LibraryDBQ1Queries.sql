@@ -39,12 +39,18 @@ SELECT book_id, title, publisher_name, pub_year, COUNT(pub_year) OVER(PARTITION 
 CREATE TABLE unpart_book AS Select * From book;
 SELECT * FROM unpart_book PARTITION (year_2015);
 
-
+--For Oracle 11C+ --
 ALTER TABLE unpart_book MODIFY PARTITION BY RANGE (pub_year) INTERVAL(1) (
     PARTITION year_2015 VALUES LESS THAN (2016)
 );
 
 SELECT * FROM unpart_book PARTITION FOR (2016);
+
+--For Laboratory(Oracle 10g EE) --
+CREATE TABLE year_2016 AS 
+    SELECT * FROM book WHERE pub_year = 2016;
+SELECT * FROM year_2016;
+DROP TABLE year_2016;
 
 
 /*
@@ -58,7 +64,7 @@ CREATE VIEW total_books AS
         ORDER BY B.book_id;
 DROP VIEW total_books;
 
-CREATE VIEW total_books AS
+CREATE VIEW remaining_books AS
     SELECT book_id, SUM(total_books) as total_copies, SUM(lend_books) as borrowed_books, (SUM(total_books)-SUM(lend_books)) as remaining
         FROM (
             SELECT book_id, no_of_copies as total_books, 0 as lend_books from book_copies 
@@ -67,5 +73,5 @@ CREATE VIEW total_books AS
         )
         GROUP BY book_id
         ORDER BY book_id;
-SELECT * FROM total_books;
-DROP VIEW total_books;
+SELECT * FROM remaining_books;
+DROP VIEW remaining_books;
