@@ -232,8 +232,6 @@ In the Scheme we have linked the book_id with "ON DELETE CASCADE" as foreign key
 
 Q4:
 
-"PARTITION BY" creates a sub view to use, as the Aggregate functions can't be used with extra fields, by creating PARTITION we can use other fields(columns) also. It is always used with "OVER()"
-
 > --New Updated(Requires oracle 11+)--
 >
 > > ```sql
@@ -259,6 +257,8 @@ Q4:
 > >    FROM book
 > >    ORDER BY pub_year;
 > > ```
+> >
+> > _Note: "PARTITION BY" when used inside a table(query) creates a sub view to use, as the Aggregate functions can't be used with extra fields, by creating PARTITION we can use other fields(columns) also. It is always used with "OVER()"_
 
 Q5:
 
