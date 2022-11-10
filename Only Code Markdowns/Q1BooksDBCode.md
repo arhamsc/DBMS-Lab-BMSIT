@@ -12,7 +12,7 @@
 >
 > BOOK_COPIES(<ins>Book_id</ins>, <ins>Programme_id</ins>, No-of_Copies)
 >
-> BOOK_LENDING(<ins>Book_id</ins>, <ins>Programme_id</ins>, <ins>Card_No</ins> , Date_Out, Due_Date)
+> BOOK_LENDING(<ins>Book_id</ins>, <ins>Programme_id</ins>, Card_No, Date_Out, Due_Date)
 >
 > LIBRARY_PROGRAMME(<ins>Programme_id</ins>, Programme_Name, Address)
 
