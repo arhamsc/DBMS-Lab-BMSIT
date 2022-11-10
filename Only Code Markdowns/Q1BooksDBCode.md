@@ -32,8 +32,6 @@
 
 **_NOTE: Please follow the order_**
 
-There is an extra table "CARD" as in "BOOK_LENDING" table there is a foreign key to card_no.
-
 ### Create Tables
 
 Publisher table
@@ -86,21 +84,13 @@ Book Copies table
 > );
 > ```
 
-Card Table (Extra table not mentioned in question)
-
-> ```sql
-> CREATE TABLE card(
->   card_no INT PRIMARY KEY
-> );
-> ```
-
 Book Lending Table
 
 > ```sql
 > CREATE TABLE book_lending(
 >   book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
 >   programme_id INT REFERENCES library_programme(programme_id) ON DELETE SET NULL,
->   card_no INT REFERENCES card(card_no) ON DELETE CASCADE,
+>   card_no INT,
 >   date_out DATE,
 >   due_date DATE
 > );
@@ -168,18 +158,6 @@ Insert into Book Copies table
 >    INTO book_copies VALUES(4,2,14)
 >    INTO book_copies VALUES(1,3,10)
 >    INTO book_copies VALUES(3,4,11)
-> SELECT * FROM dual;
-> ```
-
-Insert into Card Table
-
-> ```sql
-> INSERT ALL
->    INTO card VALUES(100)
->    INTO card VALUES(101)
->    INTO card VALUES(102)
->    INTO card VALUES(103)
->    INTO card VALUES(104)
 > SELECT * FROM dual;
 > ```
 

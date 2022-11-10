@@ -29,21 +29,15 @@ CREATE TABLE book_copies(
     no_of_copies INT
 );
 
-CREATE TABLE card(
-    card_no INT PRIMARY KEY
-);
-
-
 CREATE TABLE book_lending(  
     book_id INT REFERENCES book(book_id) ON DELETE CASCADE,
     programme_id INT REFERENCES library_programme(programme_id) ON DELETE SET NULL,
-    card_no INT REFERENCES card(card_no) ON DELETE CASCADE,
+    card_no INT,
     date_out DATE,
     due_date DATE
 );
 
 DELETE book_lending;
-DELETE card;
 DELETE book_copies;
 DELETE library_programme;
 DELETE book_author;

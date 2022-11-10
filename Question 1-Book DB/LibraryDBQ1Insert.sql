@@ -40,14 +40,6 @@ INSERT ALL
 SELECT * FROM dual;
 
 INSERT ALL
-    INTO card VALUES(100)
-    INTO card VALUES(101)
-    INTO card VALUES(102)
-    INTO card VALUES(103)
-    INTO card VALUES(104)
-SELECT * FROM dual;
-
-INSERT ALL
     INTO book_lending VALUES(1,1,101, '01-JAN-17','01-JUN-17')
     INTO book_lending VALUES(3,4,101, '11-JAN-17','11-MAR-17')
     INTO book_lending VALUES(2,3,101, '21-FEB-17','21-APR-17')
@@ -62,4 +54,3 @@ SELECT * FROM book_author;
 SELECT * FROM library_programme;
 SELECT * FROM book_copies;
 SELECT * FROM book_lending;
-SELECT * FROM card;
