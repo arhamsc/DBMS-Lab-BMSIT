@@ -229,6 +229,17 @@ Q1:
 
 Q2:
 
+>```sql
+> SELECT P1.pno
+>	  FROM Employee E, Department D, Project P1
+>	  WHERE name LIKE '% Scott' AND E.dno = D.dno AND D.mgr_ssn = E.ssn AND P1.dno = D.dno
+> UNION
+> SELECT W1.pno
+>	  FROM Employee E1, Department D1, Works_On W1
+>	  WHERE name LIKE '% Scott' AND E1.dno = D1.dno AND W1.ssn = E1.ssn;
+>```
+>(Use above Query for LAB and is more fool proof)
+>OR
 > ```sql
 > SELECT name, salary AS before_sal, (salary*1.1) as after_sal
 >    FROM employee
