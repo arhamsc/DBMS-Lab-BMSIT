@@ -284,6 +284,21 @@ Q4:
 
 Q5:
 
+>```sql
+> SELECT dno, COUNT(dno)
+>   FROM employee
+>   WHERE
+>       dno IN (
+>           SELECT E.dno
+>           FROM employee E    
+>               GROUP BY E.dno
+>	             HAVING COUNT(E.ssn) >5
+>           )
+>       AND
+>       salary > 600000
+>    GROUP BY dno;
+>```
+> OR (Use above for LAB(Oracle 10)
 > ```sql
 > SELECT dno, COUNT(dno)
 >    FROM employee
