@@ -219,16 +219,6 @@ Check for inserted values
 
 Q1:
 
-> ```sql
-> SELECT DISTINCT project.pno
->    FROM project
->       JOIN employee
->       ON project.dno = employee.dno
->           WHERE name LIKE '% Scott';
-> ```
-
-Q2:
-
 >```sql
 > SELECT P1.pno
 >	  FROM Employee E, Department D, Project P1
@@ -240,6 +230,16 @@ Q2:
 >```
 >(Use above Query for LAB and is more fool proof)
 >OR
+> ```sql
+> SELECT DISTINCT project.pno
+>    FROM project
+>       JOIN employee
+>       ON project.dno = employee.dno
+>           WHERE name LIKE '% Scott';
+> ```
+
+Q2:
+
 > ```sql
 > SELECT name, salary AS before_sal, (salary*1.1) as after_sal
 >    FROM employee
