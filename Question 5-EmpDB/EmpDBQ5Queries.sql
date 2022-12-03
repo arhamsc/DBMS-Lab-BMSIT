@@ -3,6 +3,16 @@
 last name is ‘Scott’, either as a worker or as a manager of the department 
 that controls the project.
 */
+
+SELECT P1.pno
+    FROM Employee E, Department D, Project P1
+    WHERE name LIKE '% Scott' AND E.dno = D.dno AND D.mgr_ssn = E.ssn AND P1.dno = D.dno
+UNION
+SELECT W1.pno
+    FROM Employee E1, Department D1, Works_On W1
+    WHERE name LIKE '% Scott' AND E1.dno = D1.dno AND W1.ssn = E1.ssn;
+    
+/*OR, Above is more fool proof*/    
     
 SELECT DISTINCT project.pno 
     FROM project
