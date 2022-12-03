@@ -129,10 +129,11 @@ Inserting departments with manager IDs into department table
 
 > ```sql
 > INSERT ALL
->    INTO employee VALUES(103, 'Layla Scott', 'US', 'F', 600000, 100, NULL) --dept 5
->    INTO employee VALUES(104, 'Clay Neal', 'UK', 'M', 650000, 100, NULL) --dept 2
->    INTO employee VALUES(105, 'Aldo Hansen', 'LA', 'M', 700000, 101, NULL) --dept 3 manager
->    INTO employee VALUES(106, 'Drew Richardson','US', 'M', 750000, 101, NULL) --dept 4 manager
+>    INTO department VALUES(1, 'Accounts', 101, '20-Nov-2016')
+>    INTO department VALUES(2, 'HR', 104, '19-Dec-2017')
+>    INTO department VALUES(3, 'Food', 105, '05-May-2019')
+>    INTO department VALUES(4, 'R' || '&' || 'D',106, '10-June-2020')
+>    INTO department VALUES(5, 'Development', 103, '15-August-2018')
 > SELECT * FROM dual;
 > ```
 
