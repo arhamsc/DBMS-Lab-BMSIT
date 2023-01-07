@@ -27,7 +27,7 @@ CREATE TABLE course(
 );
 
 --drop table iamarks;
-CREATE TABLE iamsarks(
+CREATE TABLE iamarks(
     usn VARCHAR(11) REFERENCES student(usn) ON DELETE CASCADE,
     subcode VARCHAR(10) REFERENCES course(subcode) ON DELETE CASCADE,
     ssid INT REFERENCES semsec(ssid) ON DELETE CASCADE,
