@@ -310,7 +310,7 @@ Q4:
 > UPDATE iamarks
 >    SET finalia = CASE
 >                    WHEN GREATEST(test1, test2) = GREATEST(test2, test3)
->                        THEN (GREATEST(test1, test2) + GREATEST(test2,test3)) / 2
+>                        THEN (GREATEST(test1, test2) + LEAST(test2,test3)) / 2
 >                    ELSE
 >                        (GREATEST(test1, test2) + GREATEST(test3, test2)) / 2
 >                    END;
