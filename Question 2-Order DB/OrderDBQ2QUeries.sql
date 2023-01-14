@@ -40,7 +40,7 @@ their cities (Use UNION operation.)
 SELECT salesman.salesman_id, salesman.name, customer.cust_name, salesman.commission
     FROM salesman
         JOIN customer
-        ON customer.salesman_id = salesman.salesman_id
+        ON customer.sales\man_id = salesman.salesman_id
     UNION 
         SELECT S.salesman_id, S.name, 'No Match', S.commission
             FROM salesman S

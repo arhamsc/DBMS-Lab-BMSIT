@@ -17,9 +17,9 @@ each section.
 */
 
 SELECT 
+    semsec.sem, semsec.sec,
     COUNT(CASE WHEN student.gender = 'M' THEN 1 END) AS male, 
-    COUNT(CASE WHEN student.gender = 'F' THEN 1 END) as female, 
-    semsec.sem, semsec.sec
+    COUNT(CASE WHEN student.gender = 'F' THEN 1 END) as female
         FROM student
         JOIN class
         ON class.usn = student.usn
